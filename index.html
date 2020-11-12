@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title> </title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container" style="margin-top: 30px;">
+			<a href="new.html">Create New Items</a>
+			<table class="table">
+			  <thead>
+				<tr>
+				  <th scope="col">Order of Favoritism</th>
+				  <th scope="col">Spells</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <th scope="row">1</th>
+				  <td id="favoriteSpell"></td>
+				</tr>
+				<tr>
+				  <th scope="row">2</th>
+				  <td id="secondSpell"></td>
+				</tr>
+				<tr>
+				  <th scope="row">3</th>
+				  <td id="thirdSpell"></td>
+				</tr>
+				<tr>
+				  <th scope="row"><a href="edit.html">Edit your Items</a></th>
+				  <td></td>
+				</tr>
+			  </tbody>
+			</table>
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+			<script>
+				function displaySpellsOnPage() {
+				//find the spells and parse, then update the page with them
+				var spells = JSON.parse(localStorage.getItem('spells'));
+				
+				$(spells).each(function() {
+					$("#favoriteSpell").append(`${this.mostFavoriteSpell}`);
+					$("#secondSpell").append(`${this.secondFavoriteSpell}`);
+					$("#thirdSpell").append(`${this.thirdFavoriteSpell}`);					
+				});
+			}
+			
+			displaySpellsOnPage();
+			</script>
+		<div>
+	</body>
+</html>
